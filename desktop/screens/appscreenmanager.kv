@@ -1,5 +1,8 @@
+#: import MainScreen desktop.screens.mainscreen.MainScreen
 #: import NoTransition kivy.uix.screenmanager.NoTransition
+#: include desktop/screens/mainscreen.kv
 
 <AppScreenManager>:
     id: AppScreenManager
     transition: NoTransition()
+    MainScreen:
