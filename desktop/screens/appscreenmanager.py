@@ -1,5 +1,3 @@
-__author__ = 'rafalo1333'
-
 from kivy.uix.screenmanager import ScreenManager
 
 class AppScreenManager(ScreenManager):
