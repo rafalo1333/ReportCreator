@@ -1,2 +1,52 @@
+#: import Window kivy.core.window.Window
+#: import dp kivy.metrics.dp
+#: import Utils kivy.utils
+
 <MainScreen>:
     name: 'MainScreen'
+    GridLayout:
+        rows: 2
+        GridLayout:
+            id: title_bar
+            size_hint: 1, None
+            height: '50dp'
+            rows: 1
+            canvas.before:
+                Color:
+                    rgb: Utils.get_color_from_hex('#FFC107')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        GridLayout:
+            cols: 2
+            rows: 1
+            padding: '5dp'
+            GridLayout:
+                canvas:
+                    Color:
+                        rgb: Utils.get_color_from_hex('#757575')
+                    Line:
+                        points: self.width, self.y+2, self.width, self.height - 2
+                        width: 2.0
+                id: last_projects
+                cols: 1
+                size_hint: None, 1
+                minimum_width: Window.width / 4
+                width: Window.width / 4
+                max_width: '500dp'
+            GridLayout:
+                cols: 1
+                AnchorLayout:
+                    anchor_x: 'center'
+                    anchor_y: 'center'
+                    GridLayout:
+                        id: menu_mainscreen
+                        cols: 1
+                        size_hint: None, None
+                        width: '300dp'
+                        height: self.minimum_height
+                        Button:
+                            text: 'Add new report'
+                            size_hint: 1, None
+                            height: '50dp'
+                            #on_release: app.root.switch_to_screen('NewProjectScreen')

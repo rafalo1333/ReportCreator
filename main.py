@@ -33,7 +33,7 @@ class ReportCreatorApp(App):
             Config.set('graphics', 'fullscreen', 'auto')
             Config.set('kivy', 'desktop', 1)
             Config.set('kivy', 'exit_on_escape', 0)
-            Config.set('input', 'mouse', 'mouse_disable_multitouch')
+            #Config.set('input', 'mouse', 'mouse_disable_multitouch')
             return Builder.load_file('desktop/main.kv')
         elif platform in ['android', 'ios']:
             Logger.info('Platform: Active platform is %s' % platform)
